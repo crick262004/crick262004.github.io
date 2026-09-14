@@ -1,0 +1,320 @@
+---
+import '../styles/global.css';
+
+const resumeUrl = 'https://drive.google.com/'; // TODO: replace with your resume Drive link
+const links = {
+  github: 'https://github.com/crick262004',
+  linkedin: 'https://www.linkedin.com/in/arnavguptacs/',
+  codeforces: 'https://codeforces.com/profile/Crick26',
+  leetcode: 'https://leetcode.com/u/Crick26/',
+  youtube: 'https://www.youtube.com/@crick_code',
+  email: 'mailto:arnavg2644@gmail.com',
+  icpc: 'https://icpc.global/',
+  arxiv: 'https://arxiv.org/abs/2512.21402',
+  orderbook: 'https://github.com/crick262004/OrderBook',
+};
+
+const stats = [
+  { value: '1972', label: 'Codeforces · Candidate Master' },
+  { value: '23/101', label: 'ICPC Asia West Championship' },
+  { value: '6th/2500', label: 'JaneStreet BitShift 2026' },
+  { value: '3', label: 'SWE internships · 2× FTE offers' },
+];
+
+const cpCards = [
+  {
+    title: 'Codeforces — Candidate Master',
+    rank: 'Rating 1972 · top 1% globally',
+    desc: 'Multiple sub-200 contest ranks. Peak form on algorithms, math and speed.',
+    href: links.codeforces,
+    hrefLabel: 'profile →',
+  },
+  {
+    title: 'JaneStreet Contests',
+    rank: 'BitShift 2026 — 6th of 2,500 · ICPC de Tryst 2026 — 7th of 3,000',
+    desc: 'Jane Street\'s own puzzle and programming contests — the ones quant firms watch.',
+  },
+  {
+    title: 'IICPC Codefest — Global Regionalist',
+    rank: 'Top 30 in India · 139th of 39,000 overall',
+    desc: 'Ranked top 30 nationwide on the CS Fundamentals paper — Computer Architecture, Operating Systems, and Modern C++ (RAII, move semantics, templates, memory model).',
+    href: '/certs/iicpc_codefest_2026.pdf',
+    hrefLabel: 'certificate →',
+  },
+  {
+    title: 'Practice Sheets',
+    rank: 'TLE Eliminators — ranked #1 · Striver A2Z — 420/420',
+    desc: 'First on the TLE Eliminators competitive programming sheet; every Striver sheet problem solved.',
+  },
+];
+
+const experience = [
+  {
+    company: 'Pure Storage',
+    role: 'Member of Technical Staff 2 — Kernel IO',
+    period: 'Jun 2026 – Present',
+    stack: 'C++ · Linux',
+    current: true,
+    bullets: [
+      'Optimizing low-level kernel I/O paths to maximize data read/write throughput and minimize driver-level latency.',
+      'Designing micro-benchmarking and testbenching suites to profile system execution and isolate hot-path bottlenecks.',
+      'Implementing compile-time optimizations and multithreaded concurrency solutions in user-space C++.',
+    ],
+  },
+  {
+    company: 'Amazon — AWS',
+    role: 'Software Development Engineer Intern',
+    period: 'Jan 2026 – Jun 2026 · FTE offered',
+    stack: 'Java · Lambda · SQS · S3 · DynamoDB · Step Functions',
+    bullets: [
+      'Architected scalable event-driven microservices powering the AWS Data Center Racks supply chain.',
+      'Built an end-to-end integration and load-testing framework for high-throughput data APIs — improving Beta reliability from 0% to 97%.',
+      'Shipped a notification routing system with zero-downtime rollout, cutting redundant compliance alerts by 90% across 377 global routes and 14 vendors.',
+    ],
+  },
+  {
+    company: 'Samsung Research Institute',
+    role: 'R&D Intern — LLMs & Agentic Systems',
+    period: 'May 2025 – Jul 2025 · FTE offered',
+    stack: 'Python · LangChain · RAG',
+    bullets: [
+      'Built on-device Agentic AI and RAG pipelines for real-time inference over Digital Health datasets.',
+      'Developed self-debugging SQL and Python agents with advanced visualizations.',
+      'Won 1st place among 70 teams at the institute-wide Annual Best-Project Competition.',
+    ],
+  },
+];
+
+const projects = [
+  {
+    name: 'High-Frequency Matching Engine',
+    tag: 'C++23 · Low-latency',
+    desc: 'Sub-microsecond limit order book: flat price arrays + intrusive lists for L1/L2 cache hits, zero-allocation hot path with arena pools and lock-free SPSC rings. SPSC ping-pong latency cut 231ns → 121ns via cache-line padding; tuned with Google Benchmark + Valgrind.',
+    href: links.orderbook,
+  },
+  {
+    name: 'Understanding Virality',
+    tag: 'Research · VLMs',
+    desc: 'A rubric-based multimodal framework predicting short-form edutainment engagement using VLM-extracted features — importance-weighted k-means + XGBoost, achieving Spearman ρ = 0.74 with real-world engagement. Published on arXiv, under review at ACL.',
+    href: links.arxiv,
+  },
+  {
+    name: 'CoCo Compiler',
+    tag: 'C · Compilers',
+    desc: 'DFA-based lexical analyzer and LL(1) predictive parser built from scratch — FIRST/FOLLOW set computation, parse-tree construction, validated across a range of test scenarios.',
+  },
+  {
+    name: 'Audio Q-Former',
+    tag: 'PyTorch · Multimodal',
+    desc: 'Bridging SeamlessM4T audio representations to LLMs via a Q-Former architecture and contrastive alignment learning — connecting speech encoders to language-model reasoning.',
+  },
+];
+
+const skillGroups = [
+  { label: 'Languages', items: ['C++20/23', 'Python', 'Java 17', 'C'] },
+  { label: 'Systems', items: ['Lock-free concurrency', 'Multithreading', 'Linux', 'CMake', 'Google Benchmark', 'Valgrind'] },
+  { label: 'ML / LLMs', items: ['PyTorch', 'LangChain / LangGraph', 'VLMs', 'XGBoost', 'OpenCV', 'NumPy / Pandas'] },
+  { label: 'Cloud', items: ['AWS Lambda', 'Step Functions', 'DynamoDB', 'S3', 'SQS', 'CDK'] },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arnav Gupta — C++ Systems & Quant Developer</title>
+    <meta name="description" content="C++ Systems & Quant Developer. ICPC Asia West Finalist, Codeforces Candidate Master, kernel IO at Pure Storage, ex-AWS." />
+    <meta property="og:title" content="Arnav Gupta — C++ Systems & Quant Developer" />
+    <meta property="og:description" content="ICPC Asia West Finalist · CF Candidate Master · Kernel IO @ Pure Storage · ex-AWS" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="bg-slate-950 text-slate-300 antialiased selection:bg-emerald-400 selection:text-emerald-950">
+    <!-- Nav -->
+    <nav class="fixed top-0 z-10 w-full border-b border-slate-800/60 bg-slate-950/80 backdrop-blur">
+      <div class="mx-auto flex max-w-4xl items-center justify-between px-6 py-3">
+        <a href="#top" class="font-mono text-sm text-emerald-400">~/arnavgupta</a>
+        <div class="hidden gap-6 font-mono text-xs text-slate-400 sm:flex">
+          <a href="#cp" class="hover:text-emerald-400">cp</a>
+          <a href="#experience" class="hover:text-emerald-400">experience</a>
+          <a href="#projects" class="hover:text-emerald-400">projects</a>
+          <a href="#skills" class="hover:text-emerald-400">skills</a>
+          <a href="#education" class="hover:text-emerald-400">education</a>
+        </div>
+        <a href={resumeUrl} target="_blank" rel="noopener" class="rounded border border-emerald-400/60 px-3 py-1 font-mono text-xs text-emerald-400 transition hover:bg-emerald-400/10">resume</a>
+      </div>
+    </nav>
+
+    <main id="top" class="mx-auto max-w-4xl px-6">
+      <!-- Hero -->
+      <section class="flex min-h-screen flex-col justify-center pt-24">
+        <p class="font-mono text-emerald-400">$ whoami</p>
+        <h1 class="mt-4 text-4xl font-bold tracking-tight text-slate-100 sm:text-6xl">Arnav Gupta</h1>
+        <p class="mt-4 max-w-2xl text-lg text-slate-400">
+          C++ Systems & Quant Developer.
+          <span class="text-slate-300">Kernel IO at Pure Storage</span>,
+          ex-AWS, ex-Samsung Research. I care about problem solving, code optimisation,
+          and the last nanosecond.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href={resumeUrl} target="_blank" rel="noopener" class="rounded bg-emerald-400 px-5 py-2.5 font-medium text-emerald-950 transition hover:bg-emerald-300">Resume ↓</a>
+          <a href={links.github} target="_blank" rel="noopener" class="rounded border border-slate-700 px-5 py-2.5 font-medium text-slate-200 transition hover:border-emerald-400 hover:text-emerald-400">GitHub</a>
+        </div>
+        <div class="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-slate-800 bg-slate-800 sm:grid-cols-4">
+          {stats.map((s) => (
+            <div class="bg-slate-900/60 px-5 py-4">
+              <p class="font-mono text-xl font-semibold text-emerald-400">{s.value}</p>
+              <p class="mt-1 text-xs text-slate-400">{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Competitive Programming -->
+      <section id="cp" class="scroll-mt-20 py-20">
+        <h2 class="font-mono text-sm text-emerald-400">// 01. competitive programming</h2>
+        <p class="mt-2 text-2xl font-bold text-slate-100">Proof of problem solving</p>
+
+        <!-- ICPC featured -->
+        <div class="mt-8 rounded-lg border border-emerald-400/30 bg-emerald-400/5 p-6">
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <h3 class="text-xl font-semibold text-slate-100">ICPC — Asia West Continent Finalist</h3>
+            <span class="font-mono text-sm text-emerald-400">ranked 23rd of 101 teams</span>
+          </div>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">
+            The <a href={links.icpc} target="_blank" rel="noopener" class="text-emerald-400 underline decoration-emerald-400/40 underline-offset-4 hover:decoration-emerald-400">ACM-ICPC</a>
+            is the world's oldest and most prestigious collegiate programming contest — over 50,000 students
+            from 3,000+ universities across ~100 countries. Arnav's team <span class="font-mono text-slate-300">"phirse lite lo"</span>
+            reached the Asia West Continent Championship (2026) after finishing 14th at ICPC India Regionals — a 2× Regionalist run.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-4 font-mono text-xs">
+            <a href="/certs/icpc_asia_west_2026_place.pdf" class="text-emerald-400 hover:underline">certificate →</a>
+            <a href="/certs/icpc_kanpur_regionals_invitation_2025.pdf" class="text-emerald-400 hover:underline">regionals invitation →</a>
+            <a href={links.codeforces} target="_blank" rel="noopener" class="text-emerald-400 hover:underline">team on codeforces →</a>
+          </div>
+        </div>
+
+        <div class="mt-4 grid gap-4 sm:grid-cols-2">
+          {cpCards.map((c) => (
+            <div class="rounded-lg border border-slate-800 bg-slate-900/60 p-5">
+              <h3 class="font-semibold text-slate-100">{c.title}</h3>
+              <p class="mt-1 font-mono text-xs text-emerald-400">{c.rank}</p>
+              <p class="mt-2 text-sm leading-relaxed text-slate-400">{c.desc}</p>
+              {c.href && (
+                <a href={c.href} target={c.href.startsWith('http') ? '_blank' : undefined} rel="noopener" class="mt-3 inline-block font-mono text-xs text-emerald-400 hover:underline">{c.hrefLabel}</a>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="scroll-mt-20 py-20">
+        <h2 class="font-mono text-sm text-emerald-400">// 02. experience</h2>
+        <p class="mt-2 text-2xl font-bold text-slate-100">Where I've shipped</p>
+        <div class="mt-8 space-y-6">
+          {experience.map((e) => (
+            <article class="rounded-lg border border-slate-800 bg-slate-900/60 p-6">
+              <div class="flex flex-wrap items-baseline justify-between gap-2">
+                <h3 class="text-lg font-semibold text-slate-100">
+                  {e.company}
+                  {e.current && <span class="ml-2 rounded bg-emerald-400/10 px-2 py-0.5 font-mono text-xs text-emerald-400">current</span>}
+                </h3>
+                <span class="font-mono text-xs text-slate-500">{e.period}</span>
+              </div>
+              <p class="mt-1 text-sm text-slate-300">{e.role}</p>
+              <p class="mt-1 font-mono text-xs text-slate-500">{e.stack}</p>
+              <ul class="mt-4 space-y-2 text-sm leading-relaxed text-slate-400">
+                {e.bullets.map((b) => (
+                  <li class="flex gap-2"><span class="text-emerald-400">▸</span><span>{b}</span></li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="scroll-mt-20 py-20">
+        <h2 class="font-mono text-sm text-emerald-400">// 03. projects</h2>
+        <p class="mt-2 text-2xl font-bold text-slate-100">Things I've built</p>
+        <div class="mt-8 grid gap-4 sm:grid-cols-2">
+          {projects.map((p) => (
+            <article class="flex flex-col rounded-lg border border-slate-800 bg-slate-900/60 p-6 transition hover:border-emerald-400/40">
+              <div class="flex items-baseline justify-between gap-2">
+                <h3 class="font-semibold text-slate-100">{p.name}</h3>
+                <span class="whitespace-nowrap font-mono text-xs text-slate-500">{p.tag}</span>
+              </div>
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-400">{p.desc}</p>
+              {p.href && (
+                <a href={p.href} target="_blank" rel="noopener" class="mt-4 font-mono text-xs text-emerald-400 hover:underline">source →</a>
+              )}
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="scroll-mt-20 py-20">
+        <h2 class="font-mono text-sm text-emerald-400">// 04. skills</h2>
+        <p class="mt-2 text-2xl font-bold text-slate-100">Tools of the trade</p>
+        <div class="mt-8 space-y-5">
+          {skillGroups.map((g) => (
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="w-24 shrink-0 font-mono text-xs uppercase tracking-wider text-slate-500">{g.label}</span>
+              {g.items.map((item) => (
+                <span class="rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1 text-xs text-slate-300">{item}</span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section id="education" class="scroll-mt-20 py-20">
+        <h2 class="font-mono text-sm text-emerald-400">// 05. education & research</h2>
+        <div class="mt-8 space-y-6">
+          <article class="rounded-lg border border-slate-800 bg-slate-900/60 p-6">
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h3 class="text-lg font-semibold text-slate-100">BITS Pilani</h3>
+              <span class="font-mono text-xs text-slate-500">2022 – 2026</span>
+            </div>
+            <p class="mt-1 text-sm text-slate-300">B.E. Computer Science, with Practice School — First Division</p>
+            <p class="mt-2 text-sm text-slate-400">
+              Coursework: OS, Compilers, Computer Architecture, Networks, DBMS, ML, Deep Learning, NLP, LLMs,
+              Probability & Statistics, Combinatorics.
+            </p>
+          </article>
+          <article class="rounded-lg border border-slate-800 bg-slate-900/60 p-6">
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h3 class="text-lg font-semibold text-slate-100">Understanding Virality</h3>
+              <span class="font-mono text-xs text-slate-500">arXiv:2512.21402 · under review at ACL</span>
+            </div>
+            <p class="mt-2 text-sm text-slate-400">
+              A rubric-based VLM framework for short-form edutainment evaluation — first-author work with
+              BITS Pilani + GenimeLabs.
+            </p>
+            <a href={links.arxiv} target="_blank" rel="noopener" class="mt-3 inline-block font-mono text-xs text-emerald-400 hover:underline">read the paper →</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/60 py-10">
+      <div class="mx-auto flex max-w-4xl flex-col items-center gap-4 px-6">
+        <p class="font-mono text-sm text-emerald-400">$ exit 0</p>
+        <div class="flex flex-wrap justify-center gap-6 font-mono text-xs text-slate-400">
+          <a href={`mailto:arnavg2644@gmail.com`} class="hover:text-emerald-400">email</a>
+          <a href={links.github} target="_blank" rel="noopener" class="hover:text-emerald-400">github</a>
+          <a href={links.linkedin} target="_blank" rel="noopener" class="hover:text-emerald-400">linkedin</a>
+          <a href={links.codeforces} target="_blank" rel="noopener" class="hover:text-emerald-400">codeforces</a>
+          <a href={links.leetcode} target="_blank" rel="noopener" class="hover:text-emerald-400">leetcode</a>
+          <a href={links.youtube} target="_blank" rel="noopener" class="hover:text-emerald-400">youtube</a>
+        </div>
+        <p class="text-xs text-slate-600">© 2026 Arnav Gupta · built with Astro</p>
+      </div>
+    </footer>
+  </body>
+</html>
