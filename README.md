@@ -29,7 +29,3 @@ npm run build    # production build → dist/
    - `CNAME` `www` → `crick262004.github.io`
 3. `echo "arnavgupta.me" > public/CNAME` in this repo, commit + push.
 4. Repo Settings → Pages → Custom domain → `arnavgupta.me` → enforce HTTPS.
-
-## Before going live
-
-- Replace the resume Drive link placeholder in `src/pages/index.astro` (`resumeUrl`).
