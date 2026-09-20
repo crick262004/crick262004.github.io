@@ -110,6 +110,13 @@ const projects = [
   },
 ];
 
+const beyond = [
+  { title: 'Chess', desc: '1700 on Chess.com — always studying the next opening.' },
+  { title: 'Team Anant', desc: "CANSAT 2024 finalist with BITS Pilani's satellite team." },
+  { title: 'Renewable Energy Club', desc: 'Secretary, AY 2024-25 — led a campus club.' },
+  { title: 'YouTube', desc: 'Code walkthroughs and CS content @crick_code.', href: links.youtube },
+];
+
 const skillGroups = [
   { label: 'Languages', items: ['C++20/23', 'Python', 'Java 17', 'C'] },
   { label: 'Systems', items: ['Lock-free concurrency', 'Multithreading', 'Linux', 'CMake', 'Google Benchmark', 'Valgrind'] },
@@ -137,6 +144,7 @@ const skillGroups = [
         <a href="#top" class="font-mono text-sm text-emerald-400">~/arnavgupta</a>
         <div class="hidden gap-6 font-mono text-xs text-slate-400 sm:flex">
           <a href="#cp" class="hover:text-emerald-400">cp</a>
+          <a href="#about" class="hover:text-emerald-400">about</a>
           <a href="#experience" class="hover:text-emerald-400">experience</a>
           <a href="#projects" class="hover:text-emerald-400">projects</a>
           <a href="#skills" class="hover:text-emerald-400">skills</a>
@@ -209,9 +217,38 @@ const skillGroups = [
         </div>
       </section>
 
+      <!-- About -->
+      <section id="about" class="scroll-mt-20 py-20">
+        <h2 class="font-mono text-sm text-emerald-400">// 02. about</h2>
+        <p class="mt-2 text-2xl font-bold text-slate-100">The short version</p>
+        <div class="mt-8 max-w-2xl space-y-4 leading-relaxed text-slate-400">
+          <p>
+            I came to computer science through competitive programming — ICPC taught me to think hard
+            under constraints, and that never left. These days I care most about the space between
+            code and hardware: cache behaviour, allocation, latency.
+          </p>
+          <p>
+            I write C++ for a living on the Kernel IO team at Pure Storage; before that I built
+            event-driven systems at AWS and agentic AI at Samsung Research. Outside work:
+            math and probability puzzles, and chess.
+          </p>
+        </div>
+        <figure class="mt-10 max-w-2xl border-l-2 border-emerald-400/60 pl-6">
+          <blockquote class="italic leading-relaxed text-slate-300">
+            "A brilliant and disciplined engineer from BITS Pilani, Arnav consistently impressed us
+            with his sharp problem-solving skills, especially in programming and RAG tasks. His ability
+            to grasp complex concepts and deliver quality work on time made him a valuable asset to
+            the team."
+          </blockquote>
+          <figcaption class="mt-3 font-mono text-xs text-slate-500">
+            — Prateek Singh, Staff AI Engineer, Samsung Electronics
+          </figcaption>
+        </figure>
+      </section>
+
       <!-- Experience -->
       <section id="experience" class="scroll-mt-20 py-20">
-        <h2 class="font-mono text-sm text-emerald-400">// 02. experience</h2>
+        <h2 class="font-mono text-sm text-emerald-400">// 03. experience</h2>
         <p class="mt-2 text-2xl font-bold text-slate-100">Where I've shipped</p>
         <div class="mt-8 space-y-6">
           {experience.map((e) => (
@@ -237,7 +274,7 @@ const skillGroups = [
 
       <!-- Projects -->
       <section id="projects" class="scroll-mt-20 py-20">
-        <h2 class="font-mono text-sm text-emerald-400">// 03. projects</h2>
+        <h2 class="font-mono text-sm text-emerald-400">// 04. projects</h2>
         <p class="mt-2 text-2xl font-bold text-slate-100">Things I've built</p>
         <div class="mt-8 grid gap-4 sm:grid-cols-2">
           {projects.map((p) => (
@@ -257,7 +294,7 @@ const skillGroups = [
 
       <!-- Skills -->
       <section id="skills" class="scroll-mt-20 py-20">
-        <h2 class="font-mono text-sm text-emerald-400">// 04. skills</h2>
+        <h2 class="font-mono text-sm text-emerald-400">// 05. skills</h2>
         <p class="mt-2 text-2xl font-bold text-slate-100">Tools of the trade</p>
         <div class="mt-8 space-y-5">
           {skillGroups.map((g) => (
@@ -273,7 +310,7 @@ const skillGroups = [
 
       <!-- Education -->
       <section id="education" class="scroll-mt-20 py-20">
-        <h2 class="font-mono text-sm text-emerald-400">// 05. education & research</h2>
+        <h2 class="font-mono text-sm text-emerald-400">// 06. education & research</h2>
         <div class="mt-8 space-y-6">
           <article class="rounded-lg border border-slate-800 bg-slate-900/60 p-6">
             <div class="flex flex-wrap items-baseline justify-between gap-2">
@@ -297,6 +334,35 @@ const skillGroups = [
             </p>
             <a href={links.arxiv} target="_blank" rel="noopener" class="mt-3 inline-block font-mono text-xs text-emerald-400 hover:underline">read the paper →</a>
           </article>
+        </div>
+      </section>
+
+      <!-- Beyond code -->
+      <section id="beyond" class="scroll-mt-20 py-20">
+        <h2 class="font-mono text-sm text-emerald-400">// 07. beyond code</h2>
+        <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {beyond.map((b) => (
+            <div class="rounded-lg border border-slate-800 bg-slate-900/60 p-5">
+              <h3 class="font-semibold text-slate-100">{b.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-400">{b.desc}</p>
+              {b.href && (
+                <a href={b.href} target="_blank" rel="noopener" class="mt-3 inline-block font-mono text-xs text-emerald-400 hover:underline">visit →</a>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="scroll-mt-20 py-20 text-center">
+        <p class="font-mono text-emerald-400">$ contact</p>
+        <h2 class="mt-4 text-3xl font-bold text-slate-100">Let's talk</h2>
+        <p class="mx-auto mt-3 max-w-md text-slate-400">
+          Low-level C++, a hard problem, or anything in between — my inbox is open.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href={links.email} class="rounded bg-emerald-400 px-6 py-3 font-medium text-emerald-950 transition hover:bg-emerald-300">Email me</a>
+          <a href={links.linkedin} target="_blank" rel="noopener" class="rounded border border-slate-700 px-6 py-3 font-medium text-slate-200 transition hover:border-emerald-400 hover:text-emerald-400">LinkedIn</a>
         </div>
       </section>
     </main>
