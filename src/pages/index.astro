@@ -18,7 +18,7 @@ const stats = [
   { value: '1972', label: 'Codeforces · Candidate Master' },
   { value: '23/101', label: 'ICPC Asia West Championship' },
   { value: 'Top 30', label: 'IICPC Codefest Global Regionals · of 39,000' },
-  { value: '3', label: 'SWE internships · 2× FTE offers' },
+  { value: '1st/70', label: 'Samsung Best-Project Competition' },
 ];
 
 const cpCards = [
@@ -32,7 +32,7 @@ const cpCards = [
   {
     title: 'JaneStreet Contests',
     rank: 'BitShift 2026 — 6th of 2,500 · ICPC de Tryst 2026 — 7th of 3,000',
-    desc: 'Jane Street\'s own puzzle and programming contests — the ones quant firms watch.',
+    desc: 'Jane Street\'s own puzzle and programming contests.',
   },
   {
     title: 'IICPC Codefest — Global Regionalist',
@@ -50,11 +50,19 @@ const cpCards = [
 
 const experience = [
   {
+    company: 'Rubrik',
+    role: 'Software Engineer — Cloud Native Protection',
+    period: 'Nov 2026 – Present',
+    current: true,
+    bullets: [
+      'Building cloud-native data protection — backup and recovery for workloads running in the cloud.',
+    ],
+  },
+  {
     company: 'Pure Storage',
     role: 'Member of Technical Staff 2 — Kernel IO',
-    period: 'Jun 2026 – Present',
+    period: 'Jun 2026 – Nov 2026',
     stack: 'C++ · Linux',
-    current: true,
     bullets: [
       'Optimizing low-level kernel I/O paths to maximize data read/write throughput and minimize driver-level latency.',
       'Designing micro-benchmarking and testbenching suites to profile system execution and isolate hot-path bottlenecks.',
@@ -130,19 +138,23 @@ const skillGroups = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arnav Gupta — C++ Systems & Backend Developer</title>
-    <meta name="description" content="C++ Systems & Backend Developer. ICPC Asia West Finalist, Codeforces Candidate Master, kernel IO at Pure Storage, ex-AWS." />
-    <meta property="og:title" content="Arnav Gupta — C++ Systems & Backend Developer" />
-    <meta property="og:description" content="ICPC Asia West Finalist · CF Candidate Master · Kernel IO @ Pure Storage · ex-AWS" />
+    <title>Arnav Gupta — Software Engineer</title>
+    <meta name="description" content="Software Engineer at Rubrik (Cloud Native Protection). ICPC Asia West Finalist, Codeforces Candidate Master, ex-Pure Storage, ex-AWS." />
+    <meta property="og:title" content="Arnav Gupta — Software Engineer" />
+    <meta property="og:description" content="Software Engineer @Rubrik · ICPC Asia West Finalist · Codeforces Candidate Master" />
     <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://arnavgupta.me/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body class="bg-slate-950 text-slate-300 antialiased selection:bg-emerald-400 selection:text-emerald-950">
     <!-- Nav -->
     <nav class="fixed top-0 z-10 w-full border-b border-slate-800/60 bg-slate-950/80 backdrop-blur">
-      <div class="mx-auto flex max-w-4xl items-center justify-between px-6 py-3">
+      <div class="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-y-2 px-6 py-3">
         <a href="#top" class="font-mono text-sm text-emerald-400">~/arnavgupta</a>
-        <div class="hidden gap-6 font-mono text-xs text-slate-400 sm:flex">
+        <div class="order-last flex w-full flex-wrap justify-between gap-x-3 gap-y-1 font-mono text-xs text-slate-400 sm:order-none sm:w-auto sm:justify-start sm:gap-6">
           <a href="#cp" class="hover:text-emerald-400">cp</a>
           <a href="#about" class="hover:text-emerald-400">about</a>
           <a href="#experience" class="hover:text-emerald-400">experience</a>
@@ -157,17 +169,22 @@ const skillGroups = [
     <main id="top" class="mx-auto max-w-4xl px-6">
       <!-- Hero -->
       <section class="flex min-h-screen flex-col justify-center pt-24">
-        <p class="font-mono text-emerald-400">$ whoami</p>
-        <h1 class="mt-4 text-4xl font-bold tracking-tight text-slate-100 sm:text-6xl">Arnav Gupta</h1>
-        <p class="mt-4 max-w-2xl text-lg text-slate-400">
-          C++ Systems & Backend Developer.
-          <span class="text-slate-300">Kernel IO at Pure Storage</span>,
-          ex-AWS, ex-Samsung Research — algorithmic optimisation, fast and clean C++,
-          and low-level performance work.
-        </p>
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a href={resumeUrl} target="_blank" rel="noopener" class="rounded bg-emerald-400 px-5 py-2.5 font-medium text-emerald-950 transition hover:bg-emerald-300">Resume ↓</a>
-          <a href={links.github} target="_blank" rel="noopener" class="rounded border border-slate-700 px-5 py-2.5 font-medium text-slate-200 transition hover:border-emerald-400 hover:text-emerald-400">GitHub</a>
+        <div class="flex flex-col-reverse gap-8 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p class="font-mono text-emerald-400">$ whoami</p>
+            <h1 class="mt-4 text-4xl font-bold tracking-tight text-slate-100 sm:text-6xl">Arnav Gupta</h1>
+            <p class="mt-4 max-w-2xl text-lg text-slate-400">
+              <span class="block text-slate-200">I love solving challenging problems.</span>
+              <span class="text-slate-300">Software Engineer at Rubrik</span> — Cloud Native Protection.
+              ICPC Asia West Finalist · Codeforces Candidate Master.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href={resumeUrl} target="_blank" rel="noopener" class="rounded bg-emerald-400 px-5 py-2.5 font-medium text-emerald-950 transition hover:bg-emerald-300">Resume ↓</a>
+              <a href={links.github} target="_blank" rel="noopener" class="rounded border border-slate-700 px-5 py-2.5 font-medium text-slate-200 transition hover:border-emerald-400 hover:text-emerald-400">GitHub</a>
+            </div>
+          </div>
+          <img src="/photo.png" alt="Arnav Gupta" width="176" height="176"
+               class="h-36 w-36 shrink-0 rounded-full object-cover ring-2 ring-emerald-400/40 sm:h-44 sm:w-44" />
         </div>
         <div class="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-slate-800 bg-slate-800 sm:grid-cols-4">
           {stats.map((s) => (
@@ -193,12 +210,13 @@ const skillGroups = [
           <p class="mt-3 text-sm leading-relaxed text-slate-400">
             The <a href={links.icpc} target="_blank" rel="noopener" class="text-emerald-400 underline decoration-emerald-400/40 underline-offset-4 hover:decoration-emerald-400">ACM-ICPC</a>
             is the world's oldest and most prestigious collegiate programming contest — over 50,000 students
-            from 3,000+ universities across ~100 countries. Arnav's team <span class="font-mono text-slate-300">"phirse lite lo"</span>
+            from 3,000+ universities across ~100 countries. My team <span class="font-mono text-slate-300">"phirse lite lo"</span>
             reached the Asia West Continent Championship (2026) after finishing 14th at ICPC India Regionals — a 2× Regionalist run.
           </p>
           <div class="mt-4 flex flex-wrap gap-4 font-mono text-xs">
             <a href="/certs/icpc_asia_west_2026_place.pdf" class="text-emerald-400 hover:underline">certificate →</a>
-            <a href="/certs/icpc_kanpur_regionals_invitation_2025.pdf" class="text-emerald-400 hover:underline">regionals invitation →</a>
+            <a href="/certs/icpc_kanpur_regionals_invitation_2025.pdf" class="text-emerald-400 hover:underline">kanpur regionals invitation →</a>
+            <a href="/certs/icpc_amritapuri_regionals_invitation_2025.pdf" class="text-emerald-400 hover:underline">amritapuri regionals invitation →</a>
             <a href={links.codeforces} target="_blank" rel="noopener" class="text-emerald-400 hover:underline">team on codeforces →</a>
           </div>
         </div>
@@ -228,9 +246,9 @@ const skillGroups = [
             code and hardware: cache behaviour, allocation, latency.
           </p>
           <p>
-            I write C++ for a living on the Kernel IO team at Pure Storage; before that I built
-            event-driven systems at AWS and agentic AI at Samsung Research. Outside work:
-            math and probability puzzles, and chess.
+            I'm a Software Engineer at Rubrik on the Cloud Native Protection team; before that,
+            kernel I/O at Pure Storage, event-driven systems at AWS, and agentic AI at Samsung
+            Research. The thread through all of it: problems that resist the first attempt.
           </p>
         </div>
         <figure class="mt-10 max-w-2xl border-l-2 border-emerald-400/60 pl-6">
@@ -261,7 +279,7 @@ const skillGroups = [
                 <span class="font-mono text-xs text-slate-500">{e.period}</span>
               </div>
               <p class="mt-1 text-sm text-slate-300">{e.role}</p>
-              <p class="mt-1 font-mono text-xs text-slate-500">{e.stack}</p>
+              {e.stack && <p class="mt-1 font-mono text-xs text-slate-500">{e.stack}</p>}
               <ul class="mt-4 space-y-2 text-sm leading-relaxed text-slate-400">
                 {e.bullets.map((b) => (
                   <li class="flex gap-2"><span class="text-emerald-400">▸</span><span>{b}</span></li>
