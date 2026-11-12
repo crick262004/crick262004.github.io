@@ -2,13 +2,14 @@
 import '../styles/global.css';
 
 const resumeUrl = 'https://drive.google.com/file/d/1ta5gCT813J2pWHpQ_mk67OLGaFDzNEvT/view?usp=sharing';
+const email = 'arnavg2644@gmail.com';
 const links = {
   github: 'https://github.com/crick262004',
   linkedin: 'https://www.linkedin.com/in/arnavguptacs/',
   codeforces: 'https://codeforces.com/profile/Crick26',
   leetcode: 'https://leetcode.com/u/Crick26/',
   youtube: 'https://www.youtube.com/@crick_code',
-  email: 'mailto:arnavg2644@gmail.com',
+  email: `mailto:${email}`,
   icpc: 'https://icpc.global/',
   arxiv: 'https://arxiv.org/abs/2512.21402',
   orderbook: 'https://github.com/crick262004/OrderBook',
@@ -254,17 +255,6 @@ const skillGroups = [
             Research. The thread through all of it: problems that resist the first attempt.
           </p>
         </div>
-        <figure class="mt-10 max-w-2xl border-l-2 border-emerald-400/60 pl-6">
-          <blockquote class="italic leading-relaxed text-slate-300">
-            "A brilliant and disciplined engineer from BITS Pilani, Arnav consistently impressed us
-            with his sharp problem-solving skills, especially in programming and RAG tasks. His ability
-            to grasp complex concepts and deliver quality work on time made him a valuable asset to
-            the team."
-          </blockquote>
-          <figcaption class="mt-3 font-mono text-xs text-slate-500">
-            — Prateek Singh, Staff AI Engineer, Samsung Electronics
-          </figcaption>
-        </figure>
       </section>
 
       <!-- Experience -->
@@ -385,6 +375,10 @@ const skillGroups = [
           <a href={links.email} class="rounded bg-emerald-400 px-6 py-3 font-medium text-emerald-950 transition hover:bg-emerald-300">Email me</a>
           <a href={links.linkedin} target="_blank" rel="noopener" class="rounded border border-slate-700 px-6 py-3 font-medium text-slate-200 transition hover:border-emerald-400 hover:text-emerald-400">LinkedIn</a>
         </div>
+        <div class="mt-6 inline-flex items-center gap-3 rounded border border-slate-800 bg-slate-900/60 px-4 py-2 font-mono text-sm">
+          <span id="email-address" class="select-all text-slate-300">{email}</span>
+          <button type="button" id="copy-email" class="text-emerald-400 hover:underline">copy</button>
+        </div>
       </section>
     </main>
 
@@ -393,7 +387,7 @@ const skillGroups = [
       <div class="mx-auto flex max-w-4xl flex-col items-center gap-4 px-6">
         <p class="font-mono text-sm text-emerald-400">$ exit 0</p>
         <div class="flex flex-wrap justify-center gap-6 font-mono text-xs text-slate-400">
-          <a href={`mailto:arnavg2644@gmail.com`} class="hover:text-emerald-400">email</a>
+          <a href={links.email} class="hover:text-emerald-400">email</a>
           <a href={links.github} target="_blank" rel="noopener" class="hover:text-emerald-400">github</a>
           <a href={links.linkedin} target="_blank" rel="noopener" class="hover:text-emerald-400">linkedin</a>
           <a href={links.codeforces} target="_blank" rel="noopener" class="hover:text-emerald-400">codeforces</a>
@@ -403,5 +397,24 @@ const skillGroups = [
         <p class="text-xs text-slate-600">© 2026 Arnav Gupta · built with Astro</p>
       </div>
     </footer>
+
+    <script>
+      // "Email me" relies on the visitor having an email app set up; this gives everyone else a one-click copy.
+      const copyBtn = document.getElementById('copy-email');
+      const emailEl = document.getElementById('email-address');
+      if (copyBtn && emailEl) {
+        copyBtn.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(emailEl.textContent?.trim() ?? '');
+            copyBtn.textContent = 'copied ✓';
+          } catch {
+            // Clipboard blocked: select the address so it can be copied by hand.
+            window.getSelection()?.selectAllChildren(emailEl);
+            copyBtn.textContent = 'selected';
+          }
+          setTimeout(() => { copyBtn.textContent = 'copy'; }, 2000);
+        });
+      }
+    </script>
   </body>
 </html>
