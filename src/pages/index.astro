@@ -152,9 +152,9 @@ const skillGroups = [
   <body class="bg-slate-950 text-slate-300 antialiased selection:bg-emerald-400 selection:text-emerald-950">
     <!-- Nav -->
     <nav class="fixed top-0 z-10 w-full border-b border-slate-800/60 bg-slate-950/80 backdrop-blur">
-      <div class="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-y-2 px-6 py-3">
-        <a href="#top" class="font-mono text-sm text-emerald-400">~/arnavgupta</a>
-        <div class="order-last flex w-full flex-wrap justify-between gap-x-1.5 gap-y-1 font-mono text-xs text-slate-400 sm:order-none sm:w-auto sm:justify-start sm:gap-6">
+      <div class="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-y-3 px-6 py-4">
+        <a href="#top" class="font-mono text-base text-emerald-400">~/arnavgupta</a>
+        <div class="order-last grid w-full grid-cols-3 gap-x-4 gap-y-2 font-mono text-sm text-slate-400 sm:flex sm:justify-between md:order-none md:w-auto md:justify-start md:gap-6">
           <a href="#cp" class="hover:text-emerald-400">cp</a>
           <a href="#about" class="hover:text-emerald-400">about</a>
           <a href="#experience" class="hover:text-emerald-400">experience</a>
@@ -162,13 +162,13 @@ const skillGroups = [
           <a href="#skills" class="hover:text-emerald-400">skills</a>
           <a href="#education" class="hover:text-emerald-400">education</a>
         </div>
-        <a href={resumeUrl} target="_blank" rel="noopener" class="rounded border border-emerald-400/60 px-3 py-1 font-mono text-xs text-emerald-400 transition hover:bg-emerald-400/10">resume</a>
+        <a href={resumeUrl} target="_blank" rel="noopener" class="rounded border border-emerald-400/60 px-4 py-1.5 font-mono text-sm text-emerald-400 transition hover:bg-emerald-400/10">resume</a>
       </div>
     </nav>
 
     <main id="top" class="mx-auto max-w-4xl px-6">
       <!-- Hero -->
-      <section class="flex min-h-screen flex-col justify-center pt-24">
+      <section class="flex min-h-screen flex-col justify-center pt-36 md:pt-24">
         <div class="flex flex-col-reverse gap-8 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p class="font-mono text-emerald-400">$ whoami</p>
@@ -211,7 +211,7 @@ const skillGroups = [
             The <a href={links.icpc} target="_blank" rel="noopener" class="text-emerald-400 underline decoration-emerald-400/40 underline-offset-4 hover:decoration-emerald-400">ACM-ICPC</a>
             is the world's oldest and most prestigious collegiate programming contest — over 50,000 students
             from 3,000+ universities across ~100 countries. My team <span class="font-mono text-slate-300">"phirse lite lo"</span>
-            reached the Asia West Continent Championship (2026) after finishing 14th at ICPC India Regionals — a 2× Regionalist run.
+            reached the AWF Championship 2026 (ICPC Asia West Finals) after finishing 14th at ICPC India Regionals — a 2× Regionalist run.
           </p>
           <div class="mt-4 flex flex-wrap gap-4 font-mono text-xs">
             <a href="/certs/icpc_asia_west_2026_place.pdf" class="text-emerald-400 hover:underline">certificate →</a>
@@ -242,8 +242,8 @@ const skillGroups = [
         <div class="mt-8 max-w-2xl space-y-4 leading-relaxed text-slate-400">
           <p>
             I came to computer science through competitive programming — ICPC taught me to think hard
-            under constraints, and that never left. These days I care most about the space between
-            code and hardware: cache behaviour, allocation, latency.
+            under constraints, and that never left. It still shapes how I work: take a hard problem
+            apart, find the approach that actually holds up, and build it properly.
           </p>
           <p>
             I'm a Software Engineer at Rubrik on the Cloud Native Protection team; before that,
@@ -376,7 +376,7 @@ const skillGroups = [
         <p class="font-mono text-emerald-400">$ contact</p>
         <h2 class="mt-4 text-3xl font-bold text-slate-100">Let's talk</h2>
         <p class="mx-auto mt-3 max-w-md text-slate-400">
-          Low-level C++, a hard problem, or anything in between — my inbox is open.
+          A hard problem, an interesting role, or just a good puzzle — my inbox is open.
         </p>
         <div class="mt-8 flex flex-wrap justify-center gap-4">
           <a href={links.email} class="rounded bg-emerald-400 px-6 py-3 font-medium text-emerald-950 transition hover:bg-emerald-300">Email me</a>
